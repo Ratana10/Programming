@@ -1,0 +1,390 @@
+@font-face {
+    font-family: bayon;
+    src: url(Font/Bayon.ttf);
+}
+@font-face {
+    font-family: khos;
+    src: url(Font/KhmerOSsiemreap.ttf);
+}
+body{
+    margin: 0;
+}
+.header{
+    width: 100%;
+    background-color: black;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+.header .menubar{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.menubar .logo{
+    width: 30%;
+    float: left;
+}
+.menubar .logo img{
+    height: 70px;
+    float: left;
+}
+.menubar .adds1{
+    width: 70%;
+    float: left;
+}
+.menubar .adds1 img{
+    height: 70px;
+    float: right;
+}
+.menu{
+    width: 100%;
+    background-color: red;
+    overflow: hidden;
+    margin-bottom: 1%;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 9%;
+}
+.menu ul li{
+    float: left;
+}
+.menu ul li a{
+    text-decoration: none;
+    display: block;
+    color:#FED1CD;
+    font-family: bayon;
+    padding: 8px 15px;
+}
+.menu ul :hover{
+    color: white;
+}
+.container{
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 1%;
+}
+.container .box-70{
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+.box-70 .box-60{
+    width: 60%;
+    background-position: center;
+    background-size: cover;
+    float: left;
+    height: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.box-70 .box-60 a{
+    background-color: red;
+    text-decoration: none;
+    font-family:khos;
+    padding: 5px 20px;
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    top: 10px;
+}
+.box-70 .box-60  :hover{
+    color: black;
+    transition: ease-in-out;
+}
+.box-70 .box-60 h2{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: white;
+    font-family: khos;
+}
+.box-70 .box-40{
+    width: 40%;
+    background-color: red;
+    float: left;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.box-70 .box-40 a{
+    background-color: blue;
+    text-decoration: none;
+    font-family:khos;
+    padding: 5px 20px;
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    top: 10px;
+}
+.box-70 .box-40  :hover{
+    color: black;
+    transition: ease-in-out;
+}
+.box-70 .box-40 h2{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: white;
+    font-family: khos;
+}
+.container .box-29{
+    width: 29%;
+    float: right;
+    height: 100%;
+}
+.box-29 .box-a{
+    width: 98%;
+    float: right;
+    height: 49%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1%;
+}
+.box-videos{
+    width: 80%;
+    margin: auto;
+    height: 500px;
+    margin-bottom: 1%;
+}
+.box-videos .box-bar{
+    width: 100%;
+    height: 8%;
+    position: relative;
+    border-bottom: 3px solid red;
+}
+.box-bar a{
+    background-color: red;
+    padding: 8px 30px;
+    font-family: bayon;
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    text-decoration: white;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+}
+.box-bar :hover{
+    color: black;
+    transition: ease-in-out;
+}
+.box-videos .boxs{
+    width: 100%;
+    height:92% ;
+    box-shadow: 0 0 5px gainsboro;
+}
+.boxs .box-90{
+    width: 95%;
+    height: 40%;
+    margin: auto;
+}
+.boxs .box-90 .box-30{
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    padding: 1% 0.5%;
+    box-sizing: border-box;
+}
+.box-30 .box-img{
+    width: 100%;
+    height: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.box-30 .box-text{
+    width: 90%;
+    margin: auto;
+    height: 30%;
+}
+.box-text p{
+    font-size: 12px;
+    font-family:khos ;
+}
+
+.box-videos .box-news{
+    width: 95%;
+    height: 60%;
+    margin: auto;
+}
+.box-news .boxs-70{
+    width: 65%;
+    height: 100%;
+    float: left;
+}
+.boxs-70 .boxs-a{
+    width: 25%;
+    height: 50%;
+    float: left;
+    padding: 0.5% 0.5%;
+    box-sizing: border-box;
+}
+.boxs-a .boxs-a-img{
+    width: 100%;
+    height: 50%;
+}
+.boxs-a .boxs-a-img img{
+    width: 100%;
+    height: 100%;
+}
+.boxs-a .boxs-a-text{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+.boxs-a .boxs-a-text p{
+    font-size: 11px;
+    font-family: khos;
+    margin: 0;
+}
+
+.box-news .boxs-30{
+    width: 35%;
+    float: left;
+    height: 100%;
+}
+.boxs-adds{
+    margin: auto;
+    width: 100%;
+    height: 25%;
+    margin-bottom: 2%;
+    background-color: indianred;
+}
+.boxs-30 .boxs-adds img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.Medea{
+    width: 80%;
+    height: 430px;
+    margin: auto;
+    margin-bottom: 1%;
+}
+.Medea .box-head{
+    width: 100%;
+    height: 10%;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 3px solid yellowgreen;
+}
+.box-head a{
+    background-color: yellowgreen;
+    padding: 8px 30px;
+    font-size: 14px;
+    font-family: bayon;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+}
+.box-head  :hover{
+    color: black;
+}
+.Medea .box-btn{
+    width: 100%;
+    height: 90%;
+    box-shadow: 0 0 5px gray;
+}
+.box-btn .bx-90{
+    width: 95%;
+    height: 100%;
+    margin: auto;
+}
+.box-btn .bx-30{
+    width: 28%;
+    float: left;
+    height: 100%;
+}
+.bx-30 .bx-30-img {
+    width: 100%;
+    height: 50%;
+}
+.bx-30-img img{
+    width: 100%;
+    height: 100%;
+}
+.bx-30 .bx-30-text{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.bx-30 .bx-30-text h1{
+    font-size: 20px;
+    font-family: khos;
+    color: whitesmoke;
+    margin: 0;
+    padding: 3px 5px;
+}
+.box-btn .bx-70{
+    width: 70%;
+    float: right;
+    height: 100%;
+ 
+}
+.bx-70 .bx-b{
+    width: 24%;
+    height: 48%;
+    /* box-shadow: 0 0 1px gray; */
+    float: left;
+    margin: 0.5%;
+    box-sizing: border-box;
+}
+.bx-b .bx-b-img{
+    width: 100%;
+    height: 50%;
+}
+.bx-b .bx-b-img img{
+    width: 100%;
+    height: 100%;
+}
+.bx-b .bx-b-txt{
+    width: 100%;
+    height: 50%;
+}
+.bx-b .bx-b-txt p{
+    font-size: 12px;
+    font-family: khos;
+    margin: 0;
+}
+
+.bottom{
+    width: 100%;
+    background-color: black;
+    height: 100px;
+}
+.bottom p{
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+}
+.box-vd{
+    width: 30%;
+    height: 200px;
+    margin: auto;
+}
+ .box-vd iframe{
+     width: 100%;
+     height: 100%;
+ }
