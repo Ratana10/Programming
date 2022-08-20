@@ -1,0 +1,80 @@
+CREATE DATABASE dbMart
+GO
+USE dbMart
+GO
+
+CREATE TABLE tbCustomer
+(
+  CusID			TINYINT				IDENTITY(1,1),
+  CusName		NVARCHAR(MAX)		COLLATE KHMER_100_BIN NOT NULL,
+  DOB			SMALLDATETIME		NULL,
+  Gender		NCHAR				NOT NULL,
+  Phone			NVARCHAR(20)		NULL,
+  [Address]		NVARCHAR(MAX)       NULL,
+  CONSTRAINT  tbCus_PK  PRIMARY KEY (CusID),
+  CONSTRAINT   UC_Phone UNIQUE(Phone)
+)
+
+CREATE TABLE tbStaff(
+	StaffID		TINYINT IDENTITY(1,1)  NOT NULL,
+	StaffName	NVARCHAR(MAX)		COLLATE KHMER_100_BIN  NOT NULL,
+	DOB			SMALLDATETIME		NULL,
+	Gender		NCHAR				NOT NULL,
+	Hiredate	SMALLDATETIME		NULL,
+	StopWork	BIT					NOT NULL,
+	Position	NVARCHAR(MAX)		NOT NULL,
+	Salary		MONEY				NOT NULL,
+	[Address]	NVARCHAR(MAX)		NOT NULL,
+	Phone		NVARCHAR(20)		NULL,
+      CONSTRAINT  StaffID_PK  PRIMARY KEY (StaffID),
+
+)
+
+CREATE TABLE tbProductType
+( 
+    TypeID		TINYINT			IDENTITY(1,1),
+    [Type]      NVARCHAR		NOT NULL,
+    CONSTRAINT tbTID_PK PRIMARY KEY (TypeID)
+)
+CREATE TABLE tbProduct
+(
+  ProID      TINYINT   IDENTITY(1,1),
+  ProName    NVARCHAR(MAX)  COLLATE KHMER_100_BIN  NOT NULL,
+  UnitPrice  MONEY     NOT NULL,
+  TypeID     TINYINT  NOT NULL,
+  CONSTRAINT pk_Pro PRIMARY KEY(ProID),
+  CONSTRAINT fk_Protype FOREIGN KEY(TypeID) REFERENCES tbProductType(TypeID)
+)
+
+CREATE TABLE tbInvoice(
+	InvoiceID                   TINYINT                        NOT NULL,
+	InvoiceDATE                 SMALLDATETIME                  NOT NULL,
+	TOTAL                       MONEY                          NOT NULL,
+    DISCOUNT                    TINYINT                        NULL,
+    CustomerID                  TINYINT                        NOT NULL,
+    StaffID                     TINYINT                        NOT NULL,
+    CONSTRAINT PK_InvoiceID PRIMARY KEY (InvoiceID),
+    CONSTRAINT FK_CustomerID FOREIGN KEY (CustomerID) REFERENCES tbCustomer(CusID) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_StaffID FOREIGN KEY (StaffID) REFERENCES tbStaff(StaffID) ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+CREATE TABLE tbStaffAccount
+(
+	AccountID		TINYINT		NOT NULL,
+	Username		NCHAR		NOT NULL,
+	[Password]		NVARCHAR(MAX)	NOT NULL,
+	[Type]			NVARCHAR(MAX)	NOT NULL,
+	StaffID			TINYINT		NOT NULL,
+
+	CONSTRAINT pk_AID PRIMARY KEY(AccountID),
+	CONSTRAINT fk_SID FOREIGN KEY(StaffID) REFERENCES tbStaff(StaffID)
+)
+CREATE TABLE tbInvoiceDetail(
+	InvoiceID	TINYINT  NOT NULL,
+	ProductID	TINYINT  NOT NULL,
+	QTY			TINYINT  NULL,
+	Amount		MONEY NULL,
+	CONSTRAINT pk_InvoiceDetail PRIMARY KEY(InvoiceID, ProductID),
+	CONSTRAINT FK_InvoiceDetail1 FOREIGN KEY (InvoiceID) REFERENCES tbInvoice(InvoiceID) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FK_InvoiceDetail2 FOREIGN KEY (ProductID) REFERENCES tbProduct(ProID) ON UPDATE CASCADE ON DELETE CASCADE,
+)
