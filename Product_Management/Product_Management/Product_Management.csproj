@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7ED2D9F-A21D-48B7-AAFA-644CE48011D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Product_Management</RootNamespace>
+    <AssemblyName>Product_Management</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.1.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts.Designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbShopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbShopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbShopDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbShopDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbShopDataSetAccount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbShopDataSetAccount.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbShopDataSetInvoices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbShopDataSetInvoices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbShopDataSetProductType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbShopDataSetProductType.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceDetail.Designer.cs">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices.Designer.cs">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductType.Designer.cs">
+      <DependentUpon>ProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staffs.Designer.cs">
+      <DependentUpon>Staffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUpdateBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUpdateBills.Designer.cs">
+      <DependentUpon>FUpdateBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewBills.Designer.cs">
+      <DependentUpon>viewBills.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceDetail.resx">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductType.resx">
+      <DependentUpon>ProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Staffs.resx">
+      <DependentUpon>Staffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUpdateBills.resx">
+      <DependentUpon>FUpdateBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewBills.resx">
+      <DependentUpon>viewBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dbShopDataSet.xsc">
+      <DependentUpon>dbShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbShopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbShopDataSet.xss">
+      <DependentUpon>dbShopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSet1.xsc">
+      <DependentUpon>dbShopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbShopDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbShopDataSet1.xss">
+      <DependentUpon>dbShopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetAccount.xsc">
+      <DependentUpon>dbShopDataSetAccount.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetAccount.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbShopDataSetAccount.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbShopDataSetAccount.xss">
+      <DependentUpon>dbShopDataSetAccount.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetInvoices.xsc">
+      <DependentUpon>dbShopDataSetInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetInvoices.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbShopDataSetInvoices.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbShopDataSetInvoices.xss">
+      <DependentUpon>dbShopDataSetInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetProductType.xsc">
+      <DependentUpon>dbShopDataSetProductType.xsd</DependentUpon>
+    </None>
+    <None Include="dbShopDataSetProductType.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbShopDataSetProductType.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbShopDataSetProductType.xss">
+      <DependentUpon>dbShopDataSetProductType.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee-bar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-login-png-transparent-6-Transparent-Images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uwp1016483.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bogdan-mb0sco-donnuts-closeup2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uwp10164831.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DCSxWwNT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uwp10164832.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\162-1620611_nature-wallpapers-hd-background-wallpaper-widescreen-full-screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username-icon-png-19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon_32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
