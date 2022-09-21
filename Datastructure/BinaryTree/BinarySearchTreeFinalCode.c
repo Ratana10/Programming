@@ -214,9 +214,12 @@ int main(){
             printf("");
             int arrNum[20] ={ 50,30,70,45,60,85,35,48,55,65,
                               75,90,33,40,47,52,58,63,73,80 };
+            int arr1[15]= {
+                14,15,4,9,7,18,3,5,16,4,20,17,9,14,5
+            };
 
-            for(int i=0; i<20; i++){
-                root = insert(root, arrNum[i]);
+            for(int i=0; i<15; i++){
+                root = insert(root, arr1[i]);
                 printf("\n Inserted %d",arrNum[i]);
             }
             printf("\n Insert Completed");

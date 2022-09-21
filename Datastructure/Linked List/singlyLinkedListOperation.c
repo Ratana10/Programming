@@ -172,6 +172,39 @@ Node* clearList(Node* s){
     printf("\nClear List successfully");
     return s;
 }
+void swapping(Node *p){
+    Node* pList =p;
+
+    while(pList->next != NULL){
+        pList = pList->next;
+
+    }
+    int num=pList->item;
+    pList->item = p->item;
+    p->item=num;
+}
+void updateFirst(Node *p){
+    
+    int num;
+    printf("new number:");scanf("%d",&num);
+    p->item =num;
+}
+void updateLast(Node *p){
+    //Node pList =p;
+    int numL ;
+    printf("New num of last");scanf("%d",&numL);
+    while (p->next != NULL)
+    {
+        p =p->next;
+    }
+    p->item =numL;
+    
+
+}
+Node* deleteFirst(Node* p){
+    p= p->next;
+    return p;
+}
 void showMenu(){
     printf("\n\nSingly Linked List Operation using Pointer");
     printf("\n1. Display");
@@ -222,6 +255,21 @@ int main(){
             case 7:
                 start = clearList(start);
                 break;
+           case 8:
+                swapping(start);
+                printf("Swapped");
+                break;
+            case 9:
+               updateFirst(start);
+               printf("done");
+               break;
+            case 10:
+            updateLast(start);
+            printf("Done");
+            break;
+            case 11:
+               start = deleteFirst(start);
+            break;
         }
     }while(ch != 0);
     return 0;

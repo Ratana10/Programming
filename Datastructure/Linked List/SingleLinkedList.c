@@ -269,6 +269,19 @@ void sortNodeListDescending(){
         tmp= tmp->nextptr;
     }
 }
+void swapFirstLast(){
+    struct node *plist = stnode;
+    struct node *fp = plist;
+
+    while(plist->nextptr != NULL){
+        plist = plist->nextptr;
+    }
+
+    int num1 = plist->num;
+    plist->num = fp->num;
+    fp->num = num1;
+
+}
 int main()
 {
     int ch,isFound=0;
@@ -287,6 +300,7 @@ int main()
         printf("10.Find element\n");
         printf("11.Sort Node List Ascending order\n");
         printf("12.Sort Node List Ascending order\n");
+        printf("13.Swap fist and last node\n");
         printf("0.Exit\n");
         printf("----------------------\n");
         printf("Enter option : "); scanf("%d",&ch);
@@ -346,6 +360,10 @@ int main()
                     printf("Sorting The Node list as Descending Order\n");
                     sortNodeListDescending();
                     displayNodeList();
+            break;
+            case 13:
+                    swapFirstLast();
+                    printf("Swapped");
             break;
         }
     }while(ch != 0);
