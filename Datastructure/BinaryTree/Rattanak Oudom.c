@@ -194,7 +194,9 @@ void print_level(asciinode *node, int x, int level) {
             printf(" ");
         }
         print_next += i;
+        red_white();
         printf("%s", node->label);
+        red();
         print_next += node->lablen;
     } else if (node->edge_length >= level) {
         if (node->left != NULL) {
@@ -302,25 +304,34 @@ Tree* deleteNode(Tree* t, int item){
             // search found 
         Tree* temp;
         if(t->left == NULL && t->right == NULL){
-            printf("deleted %d", t->info);
+        	printf("\n %95s","-");
+        	red_white();
+            printf("Deleted %d", t->info);
             free(t);
             return NULL;
         }
         else if(t->left== NULL){
             temp = t->right;
-            printf("deleted %d", t->info);
+            printf("\n %95s","-");
+            red_white();
+            printf("Deleted %d", t->info);
             free(t);
             return temp;
         }
         else if(t->right == NULL){
             temp=t->left;
-            printf("deleted %d", t->info);
+            printf("\n %95s","-");
+            red_white();
+            printf("Deleted %d", t->info);
             free(t);
             return temp;
         }
         else{
             char ch;
+            printf("\n %94c",16);
+            red();
             printf("left(l) or Right(r): "); fflush(stdin); scanf("%c",&ch);
+            blue();
             if(ch == 'l'){
                 temp = findMaxNode(t->left);
                 swap(&t->info, &temp->info);
@@ -350,12 +361,14 @@ Tree* searchNode(Tree* t, int item){
 }
 void showMenu(){
     printf("\n\n");
-    printf("%40c%c%c%s%c%c%c\n\n",176,176,176,"[1]. Input n node [2]. Insert exist node [3]. Print In Binary Tree[4]. Delete [5]. Search [6]. Clear Tree [0]. Exit",176,176,176);
+    printf("%50c%c%c%s%c%c%c\n\n",176,176,176,"[1]. Input n node [2]. Insert exist node [3]. Print In Binary Tree [4]. Delete [0]. Exit",176,176,176);
     printf("\n %94cEnter option : ",16);
 }
 
 
 int main(){
+	int x,y;
+	int arr[20];
 	system("COLOR F0");
 	blue();
     Tree* root=NULL;
@@ -369,12 +382,32 @@ int main(){
         switch (ch)
         {
         case 1:
-            /* code */
+        	Beep(1000,300);
+        	Beep(1100,300);
+        	red();
+        	printf("\n%110s","+How many items?");
+        	blue();
+        	printf("\n\n%95c%s",16,"Answer:");scanf("%d",&x);
+        	system("cls");
+        	for(int i=0; i<x; i++){
+        	   printf("\n%90c  ",16);
+        	   scanf("%d",&arr[i]);
+        	   root = insertNode(root,arr[i]);
+            }
+            
             break;
         case 2:
+        	Beep(1000,300);
+        	Beep(1100,300);
         	system("cls");
             printf("\n\n");
+            printf("\n\n");
             int nums[20]= { 50,30,70,45,60,85,35,48,55,65, 75,90,33,40,47,52,58,63,73,80 };
+            printf("%93s","");
+            black_yellow();
+            printf("EXITS NODE");
+            blue();
+            printf("\n");
             for(int i=0; i<20; i++){
                 root = insertNode(root, nums[i]);
                 printf("\n%100s  [%d] ","Inserted",nums[i]);
@@ -384,6 +417,11 @@ int main(){
             
             break;
         case 3:
+        	Beep(1000,300);
+        	Beep(1100,300);
+        	system("cls");
+        	printf("\n\n");
+        	printf("\n\n");
         	printf("\n%85s"," ");
         	black_yellow();
             printf("%s  \n\n\n","=======> Binary Search Tree <=======");
@@ -391,26 +429,30 @@ int main(){
             print_ascii_tree(root);
             break;
         case 4:
-        	printf("\n%95s"," ");
-            printf("Enter number to delete : "); 
+        	Beep(1300,300);
+        	Beep(1200,300);
+        	printf("\n%94s"," ");
+            printf("%cEnter number to delete : ",16); 
             scanf("%d",&num);
             root = deleteNode(root, num);
             break;
-        case 5:
-            printf("Enter number to search "); scanf("%d", &num);
-            temp = searchNode(root, num);
-            if(temp == NULL){
-                printf("Search not found in bianry Tree");
-            }else{
-                printf("Search found %d",temp->info);
-            }
-            break;
-        default:
-            break;
+//        case 5:
+//            printf("Enter number to search "); scanf("%d", &num);
+//            temp = searchNode(root, num);
+//            if(temp == NULL){
+//                printf("Search not found in bianry Tree");
+//            }else{
+//                printf("Search found %d",temp->info);
+//            }
+//            break;
+//        default:
+//            break;
         }
     }while(ch != 0);
 
-    
+ Beep(1000,300);
+ Beep(1100,300);
+ Beep(1100,100);   
 }
 void blue(){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),241);
@@ -430,331 +472,3 @@ void black_yellow(){
 void red_white(){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),75);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Rattanak Oudom
